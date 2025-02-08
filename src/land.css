@@ -1,0 +1,354 @@
+/* General Styles */
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type:
+  }
+
+  body {
+    display: grid;
+    background-color: light-dark(#fff, #000);
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in lch, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+
+.landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00ff88;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin: 5rem 0;
+padding: 100px;
+
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #000000;
+  max-width: 600px;
+  font-weight:  300;
+
+  margin: 0 auto 2rem;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  color: #1e1e2f;
+  border: none;
+  padding: 0rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+  color: #000;
+}
+
+
+
+/* Features Section */
+.features {
+  display: flex;
+  gap: 2rem;
+  margin: 5rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00ff88;
+}
+
+.feature-card p {
+  color: #000000;
+  line-height: 1.6;
+}
+
+
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 2rem 0;
+  color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-block {
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  background: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  border: none;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+
+
+/* Text hierarchy */
+.content-block .tagline {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.content-block{
+margin-bottom: 140px;  }
+  
+
+.content-block h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.content-block p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  color: var(--text-color, #000000);
+  font-weight: 400;
+}
+
+/* Alternate text alignment */
+.content-block:nth-child(odd) .content-wrapper {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.content-block:nth-child(even) .content-wrapper {
+  text-align: right;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Ensure consistent alignment */
+.content-block:nth-child(odd) .content-wrapper > *,
+.content-block:nth-child(even) .content-wrapper > * {
+  width: 100%;
+  max-width: 100%;
+  text-align: inherit;
+}
+
+/* Remove alternate background styling */
+.content-block:nth-child(odd),
+.content-block:nth-child(even) {
+  --content-bg: transparent;
+  --border-color: transparent;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-block {
+    padding: 2rem 1rem;
+  }
+  
+  .content-block .tagline {
+    font-size: 2.5rem;
+  }
+  
+  .content-block h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-block p {
+    font-size: 1.1rem;
+  }
+} 
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-block {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.content-block.visible {
+  opacity: 1;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Icon container styling */
+.icon-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.content-block:nth-child(odd) .icon-container {
+  flex-direction: row;
+}
+
+.content-block:nth-child(even) .icon-container {
+  flex-direction: row-reverse;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 7rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 120px;
+  text-align: center;
+}
+
+/* Content styling */
+.content-text {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon-container {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  
+  .icon {
+    font-size: 4rem;
+  }
+}
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.cta .tagline {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.cta .cta-button {
+  font-size: 1.5rem;
+  padding: 1.5rem 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon {
+    display: none;
+  }
+  
+  .cta .tagline {
+    font-size: 2.5rem;
+  }
+} 

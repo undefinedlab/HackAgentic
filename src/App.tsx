@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import './App.css'
-import WalletConnect from './components/WalletConnect'
+import Landing from './land'
+import Dashboard from './dashboard/Dashboard'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<'landing' | 'dashboard'>('landing');
 
   return (
-    <div className="app">
-      <h1>Copytrade.AI</h1>
-      <WalletConnect />
-    </div>
+    <>
+      {currentPage === 'landing' ? (
+        <Landing onNavigate={() => setCurrentPage('dashboard')} />
+      ) : (
+        <Dashboard onNavigate={() => setCurrentPage('landing')} />
+      )}
+    </>
   )
 }
 
