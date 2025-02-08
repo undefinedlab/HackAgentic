@@ -11,7 +11,7 @@ function App() {
       {currentPage === 'landing' ? (
         <Landing onNavigate={() => setCurrentPage('dashboard')} />
       ) : (
-        <Dashboard onNavigate={() => setCurrentPage('landing')} />
+        <Dashboard />
       )}
     </>
   )

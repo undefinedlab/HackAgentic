@@ -1,17 +1,144 @@
-.back-button {
-  background: #00ff88;
-  color: #1e1e2f;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.back-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-} 
+  
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    margin: 3%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .btn-deposit {
+    padding: 8px 16px;
+    background-color: #f59e0b;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-deposit:hover {
+    background-color: #d97706;
+  }
+  
+  .btn-connect-wallet {
+    padding: 8px 16px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    color: #374151;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-connect-wallet:hover {
+    background-color: #e5e7eb;
+  }
+
+
+
+
+  
+  .app-container {
+    display: flex;
+    
+    flex: 1;
+    margin-top: 64px; /* Same as header height */
+    min-height: calc(100vh - 64px);
+  }
+  
+  .app-sidebar {
+    position: fixed;
+    left: 0;
+    top: 64px; /* Same as header height */
+    bottom: 0;
+    width: 260px;
+    margin: 3%;
+    margin-top: 5%;
+border-radius: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .nav-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #9ca3af;
+    border-radius: 8px;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  .nav-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  
+  .app-main {
+    flex: 1;
+    margin-left: 260px; /* Same as sidebar width */
+    padding: 24px;
+    min-height: 100%;
+    background-color: #f5f5f5;
+  }
+  
+  /* Ensure content containers within main have proper spacing */
+  .content-area {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+  }

@@ -4,3 +4,34 @@
   padding: 2rem;
   text-align: center;
 }
+
+
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.header-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  font-weight: 700;
+}
+
+.headermenu-link  {
+padding: 10px;
+margin: 5px;
+border: 2.4px solid black;
+border-radius: 15px;
+font-weight: 500;
+}
+
+.headermenu-link:hover {
+  background-color: #15e260;
+  color: white;
+  }
