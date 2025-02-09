@@ -58,8 +58,7 @@ Ex. Buy bitcoin each one hour for 1 usd, and call this strategy "BTC/DCA 1"
 ### Core Infrastructure
 - **Blockchain**: Base Layer 2 for scalability
 - **AI Engine**: LLM APIkey + base agentkit
-- **Deployment**: OpSec
-- **Market Data**: Real-time price feeds and market analysis (graph?)
+- **Frontend**: Coinbase OnchainKIT
 
 
 ## Growth Strategy
