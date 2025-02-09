@@ -1,6 +1,8 @@
 import React from 'react';
 import './land.css';
 import { useScrollAnimation } from './useScrollAnimation';
+// Import the banner image from the same folder
+import bannerImage from './copytrade.png';
 
 interface LandingProps {
   onNavigate: () => void;
@@ -28,8 +30,6 @@ const Landing: React.FC<LandingProps> = ({ onNavigate }) => {
   return (
     <div className='fluid'>
       <div className="landing-container">
-
-
         <header className="header">
           <h1 className="header-logo">🚀Copytrade.AI</h1>
           <div className="headermenu">
@@ -40,12 +40,25 @@ const Landing: React.FC<LandingProps> = ({ onNavigate }) => {
           </div>
         </header>
 
+  
         <section className="hero">
-          <h2 className="hero-title">Create, share, and execute AI-powered trading strategies.</h2>
+          <h2 className="hero-title">
+            Create, share, and execute AI-powered trading strategies.
+          </h2>
           <p className="hero-subtitle">
             Join the future of decentralized trading.
           </p>
+
+          
+              {/* Fullwidth banner image below the header */}
+              <img
+          src={bannerImage}
+          alt="Copytrade Banner"
+          style={{ width: '100%', display: 'block', marginTop: '100px', }}
+        />
+
         </section>
+
 
         <section className="content-block strategy-engine">
           <div className="content-wrapper">
@@ -54,7 +67,9 @@ const Landing: React.FC<LandingProps> = ({ onNavigate }) => {
               <div className="content-text">
                 <p className="tagline">Turn ideas into execution</p>
                 <h2>AI Strategy Engine</h2>
-                <p>Describe strategies in plain English, watch AI craft the code.</p>
+                <p>
+                  Describe strategies in plain English, watch AI craft the code.
+                </p>
               </div>
             </div>
           </div>
@@ -67,7 +82,9 @@ const Landing: React.FC<LandingProps> = ({ onNavigate }) => {
               <div className="content-text">
                 <p className="tagline">Set it and forget it</p>
                 <h2>Autonomous Trading</h2>
-                <p>Deploy agent contracts that trade 24/7 with precision.</p>
+                <p>
+                  Deploy agent contracts that trade 24/7 with precision.
+                </p>
               </div>
             </div>
           </div>
@@ -80,13 +97,14 @@ const Landing: React.FC<LandingProps> = ({ onNavigate }) => {
               <div className="content-text">
                 <p className="tagline">Learn from the best</p>
                 <h2>Strategy Marketplace</h2>
-                <p>Discover, replicate, and monitor top-performing AI strategies. Our ranking system and transparent analytics help you make informed decisions.</p>
+                <p>
+                  Discover, replicate, and monitor top-performing AI strategies.
+                  Our ranking system and transparent analytics help you make informed decisions.
+                </p>
               </div>
             </div>
           </div>
         </section>
-
-   
 
         <section className="content-block cta">
           <div className="content-wrapper">

@@ -1,0 +1,599 @@
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  /* Filter Bar */
+  .filterBar {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+  }
+  
+  /* Updated Filter Bar Content: Allow wrapping and spacing */
+  .filterBarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allow controls to wrap if needed */
+    gap: 1rem;
+  }
+  
+  /* Group the filter controls on the left */
+  .filterControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Group the search and sorting controls on the right */
+  .searchSortControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Style the search container to position the icon nicely */
+  .searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Position the search icon inside the container */
+  .searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    color: #6B7280;
+  }
+  
+  /* Optional: Make the sort order button look clean */
+  .sortOrderButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Arrange the view mode buttons horizontally */
+  .viewModeButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .filterButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: #4B5563;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+  
+  .filterButton:hover {
+    background-color: #F3F4F6;
+  }
+  
+  .frequencyTags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .frequencyTag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+  
+  .frequencyTagActive {
+    background-color: #DBEAFE;
+    color: #2563EB;
+  }
+  
+  .frequencyTagInactive {
+    background-color: #F3F4F6;
+    color: #4B5563;
+  }
+  
+  /* Search and Controls */
+  .controlsGroup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .searchWrapper {
+    position: relative;
+  }
+  
+  .searchInput {
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3B82F6;
+  }
+  
+  .sortSelect {
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .viewControls {
+    display: flex;
+    gap: 0.5rem;
+    border-left: 1px solid #E5E7EB;
+    padding-left: 1rem;
+  }
+  
+  .viewButton {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+  
+  .viewButtonActive {
+    background-color: #F3F4F6;
+  }
+  
+  /* Advanced Filters */
+  .advancedFilters {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .rangeControl {
+    width: 100%;
+  }
+  
+  .rangeLabel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rangeLimits {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #6B7280;
+  }
+  
+
+
+  /* Results Summary */
+  .resultsSummary {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #6B7280;
+  }
+  
+  /* Traders Grid */
+  .tradersGrid {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .gridView {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  @media (min-width: 640px) {
+    .gridView {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .gridView {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .gridView {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (min-width: 1536px) {
+    .gridView {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  .listView {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Trader Card - Made more evident with increased padding and gap */
+  .traderCard {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 calc(25% - 1.5rem);
+  }
+  
+  .traderCard:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  
+  .traderInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  
+  .traderDetails {
+    min-width: 0;
+  }
+  
+  .traderName {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .traderCapacity {
+    font-size: 0.75rem;
+    color: #6B7280;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .performanceChart {
+    height: 3rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .statBox {
+    background-color: #F9FAFB;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .statLabel {
+    font-size: 0.75rem;
+    color: #6B7280;
+  }
+  
+  .statValue {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .positiveValue {
+    color: #10B981;
+  }
+  
+  .negativeValue {
+    color: #EF4444;
+  }
+  
+  .additionalStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .actionButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .mockButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    background-color: #F3F4F6;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  .mockButton:hover {
+    background-color: #E5E7EB;
+  }
+  
+  .copyButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+  }
+  
+  .copyButtonAvailable {
+    background-color: #3B82F6;
+    color: white;
+  }
+  
+  .copyButtonAvailable:hover {
+    background-color: #2563EB;
+  }
+  
+  .copyButtonFull {
+    background-color: #E5E7EB;
+    color: #6B7280;
+  }
+  
+  .tradersFlex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .traderCard {
+    flex: 0 0 calc(25% - 1rem); /* 25% of the container minus the gap */
+  }
+  
+  /* Detailed Stats Grid inside Trader Card - now 2 columns, 3 rows */
+  .detailedStats {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    gap: 0.75rem;
+  }
+  
+  /* New Action Button Styles */
+  .saveButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    background-color: #F3F4F6;
+    color: #374151;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  .saveButton:hover {
+    background-color: #E5E7EB;
+  }
+  
+  .runButton {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    background-color: #10B981;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  .runButton:hover {
+    background-color: #059669;
+  }
+
+  /* New classes for Dashboard Layout */
+
+  /* Main grid container for the dashboard.
+     On larger screens, it displays two columns (left: 2fr and right: 1fr);
+     on smaller screens, it collapses to a single column.
+  */
+  .dashboardGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .dashboardGrid {
+        grid-template-columns: 1fr;
+    }
+  }
+
+  /* Optional padding/margin for inner dashboard content */
+  .mainContent {
+    padding: 1.5rem;
+  }
+
+  /* Left Column styling */
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Right Column styling */
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Card header for inner cards (e.g., Chart header) */
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Button group for card header controls */
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Trading Agents Grid: A responsive grid for agent cards */
+  .tradingAgentsGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Container */
+  .marketplace-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* Grid layout: display cards in rows/columns */
+  .marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  /* Card style */
+  .marketplace-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Card header and trader info */
+  .marketplace-card-header {
+    margin-bottom: 12px;
+  }
+
+  .marketplace-card-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .marketplace-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+  }
+
+  .marketplace-trader-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .marketplace-trader-capacity {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  /* Information grid for stats */
+  .marketplace-info-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .marketplace-info-label {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #777;
+  }
+
+  .marketplace-info-value {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  /* Card buttons container */
+  .marketplace-card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* push the buttons to the bottom of the card */
+  }
+
+  /* Button styling */
+  .marketplace-mock-copy-btn,
+  .collection-delete-btn,
+  .collection-list-btn {
+    padding: 8px 14px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .marketplace-mock-copy-btn:hover,
+  .collection-delete-btn:hover,
+  .collection-list-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Optional: Responsive tweaks */
+  @media (max-width: 768px) {
+    .marketplace-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+  }
