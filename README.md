@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+# Copytrade.AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Our platform revolutionizes decentralized trading by enabling users to create, share, and execute AI-powered trading strategies through an intuitive interface. The ecosystem combines advanced AI capabilities with blockchain technology to create a self-sustaining marketplace of trading strategies.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Core Components
 
-## Expanding the ESLint configuration
+### 1. Strategy Creation Engine
+- **Natural Language Interface**: Users describe trading strategies in plain English
+- **AI Transformation**: Converts descriptions into executable code
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Ex. Buy bitcoin each one hour for 1 usd, and call this strategy "BTC/DCA 1" 
 
-- Configure the top-level `parserOptions` property like this:
+### 2. Autonomous Agent Framework
+- **On-Chain Deployment**: Strategies run as smart contracts on Base
+- **Performance Monitoring**: Real-time tracking and reporting
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 3. Marketplace Ecosystem
+- **Strategy Discovery**: Categorized browsing and search
+- **Performance Metrics**: Historical data and risk analysis
+- **Copy Trading**: One-click strategy replication
+- **Reputation System**: Creator rankings and reviews
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+## User Flows
+
+### Strategy Creator Journey
+1. **Strategy Design**: Use natural language to describe trading approach
+2. **Deployment**: Configure parameters and deploy as autonomous agent
+3. **Monetization**: Set fee structure and earn from strategy adoption
+
+### Copy Trader Journey
+1. **Discovery**: Browse and evaluate available strategies based on risk profile and performance
+2. **Configuration**: Set capital allocation and risk parameters
+3. **Execution**: Deploy personal copy of the strategy. 
+4. **Management**: Monitor performance and adjust allocations
+
+
+
+## Economic Model
+
+### Revenue Streams
+- **Success Fees**: Percentage of winning trades
+- **Premium Features**: Advanced analytics and tools
+- **Marketplace Fees**: Transaction fees for strategy adoption
+
+### Incentive Structure
+- **Creators**: Earn 15% of winning trades from all copies
+- **Traders**: Pay only for successful strategies
+- **Platform**: Sustainable ecosystem growth through shared success
+
+
+
+## Technology Stack
+
+### Core Infrastructure
+- **Blockchain**: Base Layer 2 for scalability
+- **AI Engine**: LLM APIkey + base agentkit
+- **Deployment**: OpSec
+- **Market Data**: Real-time price feeds and market analysis (graph?)
+
+
+## Growth Strategy
+
+### User Acquisition
+- **Community Building**: Strategy competitions and challenges
+- **Incentivization**: Early adopter rewards and referral programs
+- **Education**: Comprehensive tutorials and strategy guides
+
+### Ecosystem Development
+- **API Access**: Enable third-party strategy development
+- **Partnerships**: Integrations with DeFi protocols
+- **Governance**: Community-driven platform evolution
+
+
+
+## Roadmap
+
+### Phase 1: Core Platform
+- Strategy creation and deployment
+- Basic marketplace functionality
+- On-chain execution framework
+
+### Phase 2: Ecosystem Growth
+- Advanced analytics tools
+- Social features and community building
+- Mobile application development
+
+### Phase 3: Expansion
+- Cross-chain compatibility
+- Institutional-grade features
+- AI-powered portfolio management 
